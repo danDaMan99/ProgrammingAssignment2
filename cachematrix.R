@@ -1,15 +1,28 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This set of functions is meant to cache a matrix and calculate its inversion and hold in a cache
 
-## Write a short comment describing this function
+## This function caches a matrix in the global workspace as 'm'
 
 makeCacheMatrix <- function(x = matrix()) {
 
+    if (exists("m")) {
+        rtn <- m
+    }
+    else {
+        m <<- x
+        rtn <- m
+    }
+    rtn
 }
 
 
-## Write a short comment describing this function
+## This function returns a matrix which is an inverse of x and caches it in the 'global' environment
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
+
+        ## Check if a cached version already exists and return it
+        rtn <- makeCacheMatrix(x)
+
+        ## Return the result
+        rtn
 }
