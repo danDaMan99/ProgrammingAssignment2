@@ -21,7 +21,7 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
         ## Check if a cached version already exists and return it
-        rtn <- makeCacheMatrix(x)
+        rtn <- makeCacheMatrix(solve(x, ...))
 
         ## Return the result
         rtn
